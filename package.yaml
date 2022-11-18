@@ -1,0 +1,79 @@
+
+name: haskell-experian
+version: 0.1.0.0
+license: BSD3
+author: "Gauss"
+maintainer: "info@gauss.com"
+copyright: "2022 Gauss"
+
+extra-source-files:
+  - README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/fintech-development/haskell-experian#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- text
+- time
+- aeson-deriving
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Werror=missing-fields
+  - -Werror=incomplete-record-updates
+  - -Werror=missing-methods
+  - -Werror=incomplete-patterns
+  - -Wincomplete-uni-patterns
+  - -Wpartial-fields
+
+default-extensions:
+  - RecordWildCards
+  - NamedFieldPuns
+  - DuplicateRecordFields
+  - OverloadedLabels
+  - OverloadedStrings
+  - FlexibleContexts
+  - FlexibleInstances
+  - StandaloneDeriving
+  - ScopedTypeVariables
+  - ExplicitForAll
+  - TypeOperators
+  - TypeApplications
+  - DeriveGeneric
+  - MonoLocalBinds
+  - DerivingStrategies
+  - BlockArguments
+  - PostfixOperators
+  - TupleSections
+  - LambdaCase
+  - NumericUnderscores
+  - MultiWayIf
+  - BangPatterns
+  - ConstraintKinds
+  - DataKinds
+  - DefaultSignatures
+  - DerivingVia
+  - EmptyDataDecls
+  - ExistentialQuantification
+  - FunctionalDependencies
+  - GADTs
+  - KindSignatures
+  - MultiParamTypeClasses
+  - NumDecimals
+  - PatternSynonyms
+  - RankNTypes
+  - TypeFamilies
+  - ViewPatterns
+  - PartialTypeSignatures
+
+library:
+  source-dirs: lib

@@ -1,0 +1,79 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           haskell-experian
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/fintech-development/haskell-experian#readme>
+author:         Gauss
+maintainer:     info@gauss.com
+copyright:      2022 Gauss
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Experian.Model
+      Experian.Model.ClearAdvancedAttributes
+      Experian.Model.ClearBankBehavior
+      Experian.Model.ClearBureau2
+      Experian.Model.ClearCreditRisk
+      Experian.Model.ClearFraudInsight
+      Experian.Model.ClearIncomeAttributes
+      Experian.Model.Common
+      Experian.Model.Inquiry
+  other-modules:
+      Paths_haskell_experian
+  hs-source-dirs:
+      lib
+  default-extensions:
+      RecordWildCards
+      NamedFieldPuns
+      DuplicateRecordFields
+      OverloadedLabels
+      OverloadedStrings
+      FlexibleContexts
+      FlexibleInstances
+      StandaloneDeriving
+      ScopedTypeVariables
+      ExplicitForAll
+      TypeOperators
+      TypeApplications
+      DeriveGeneric
+      MonoLocalBinds
+      DerivingStrategies
+      BlockArguments
+      PostfixOperators
+      TupleSections
+      LambdaCase
+      NumericUnderscores
+      MultiWayIf
+      BangPatterns
+      ConstraintKinds
+      DataKinds
+      DefaultSignatures
+      DerivingVia
+      EmptyDataDecls
+      ExistentialQuantification
+      FunctionalDependencies
+      GADTs
+      KindSignatures
+      MultiParamTypeClasses
+      NumDecimals
+      PatternSynonyms
+      RankNTypes
+      TypeFamilies
+      ViewPatterns
+      PartialTypeSignatures
+  ghc-options: -Wall -Wcompat -Werror=missing-fields -Werror=incomplete-record-updates -Werror=missing-methods -Werror=incomplete-patterns -Wincomplete-uni-patterns -Wpartial-fields
+  build-depends:
+      aeson
+    , aeson-deriving
+    , base >=4.7 && <5
+    , text
+    , time
+  default-language: Haskell2010
