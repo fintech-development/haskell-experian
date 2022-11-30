@@ -178,7 +178,7 @@ data PayFrequency
   | Semimonthly
   | Monthly
   deriving (Show, Eq, Generic, Bounded, Enum)
-  deriving (ToJSON, FromJSON) via ExperianEncoding PayFrequency
+  deriving (ToJSON, FromJSON) via GenericEncoded '[ConstructorTagModifier := Uppercase] PayFrequency
 
 data Relationship
   = Relative
@@ -186,7 +186,7 @@ data Relationship
   | Employer
   | Neighbor
   deriving (Show, Eq, Generic, Bounded, Enum)
-  deriving (ToJSON, FromJSON) via ExperianEncoding Relationship
+  deriving (ToJSON, FromJSON) via GenericEncoded '[ConstructorTagModifier := Uppercase] Relationship
 
 data HousingStatus
   = HousingRent
@@ -195,4 +195,4 @@ data HousingStatus
   | HousingFriend
   | HousingOther
   deriving (Show, Eq, Generic, Bounded, Enum)
-  deriving (ToJSON, FromJSON) via GenericEncoded '[ConstructorTagModifier := '[DropPrefix "Housing", Uppercase]] HousingStatus
+  deriving (ToJSON, FromJSON) via GenericEncoded '[ConstructorTagModifier := '[Uppercase, DropPrefix "Housing"]] HousingStatus
