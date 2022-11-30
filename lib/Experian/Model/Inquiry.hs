@@ -195,4 +195,4 @@ data HousingStatus
   | HousingFriend
   | HousingOther
   deriving (Show, Eq, Generic, Bounded, Enum)
-  deriving (ToJSON, FromJSON) via GenericEncoded '[ConstructorTagModifier := DropPrefix "Housing"] HousingStatus
+  deriving (ToJSON, FromJSON) via GenericEncoded '[ConstructorTagModifier := '[DropPrefix "Housing", Uppercase]] HousingStatus
