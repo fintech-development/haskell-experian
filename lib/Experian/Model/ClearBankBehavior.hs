@@ -213,7 +213,7 @@ data Account = Account
     bankName :: Maybe T.Text,
     accountNumber :: Maybe T.Text,
     routingNumber :: Maybe T.Text,
-    stability :: Stability Int
+    stability :: Maybe (Stability Int)
   }
   deriving (Show, Eq, Generic)
   deriving (ToJSON, FromJSON) via ExperianEncoding Account
