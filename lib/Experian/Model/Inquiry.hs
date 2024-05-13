@@ -1,6 +1,6 @@
 module Experian.Model.Inquiry where
 
-import Data.Aeson (FromJSON (..), ToJSON (..))
+import Data.Aeson (FromJSON (..), ToJSON (..), withText)
 import Data.Aeson.Deriving
   ( ConstructorTagModifier,
     DropPrefix,
@@ -126,10 +126,21 @@ data AccountType
   | AccountDepository
   deriving (Show, Eq, Generic, Bounded, Enum)
   deriving
-    (ToJSON, FromJSON)
+    (ToJSON)
     via GenericEncoded
           '[ConstructorTagModifier := '[Uppercase, DropPrefix "Account"]]
           AccountType
+
+instance FromJSON AccountType where
+  parseJSON = withText "AccountType" $ \str -> case T.toLower str of
+    "checking" -> pure AccountChecking
+    "savings" -> pure AccountSavings
+    "debitcard" -> pure AccountDebitCard
+    "moneymarket" -> pure AccountMoneyMarket
+    "iin" -> pure AccountIIN
+    "other" -> pure AccountOther
+    "depository" -> pure AccountDepository
+    _ -> fail $ "Invalid AccountType: " <> T.unpack str
 
 data Generation
   = GenerationJR
